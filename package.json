@@ -9,16 +9,20 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "echo \"blah blah pre-commit\""
+      "pre-commit": "yarn lint-staged"
     }
   },
   "dependencies": {
-    "husky": "^4.3.0",
     "next": "9.5.5",
     "react": "16.13.1",
     "react-dom": "16.13.1"
   },
   "devDependencies": {
-    "prettier": "^2.1.2"
+    "husky": "^4.3.0",
+    "prettier": "^2.8.0",
+    "lint-staged": "^13.1.0"
+  },
+  "lint-staged": {
+    "*.js": "prettier --write"
   }
 }
