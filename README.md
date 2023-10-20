@@ -1,3 +1,167 @@
+So I tested it for the following.
+
+With node version `v14.15.0` and `v18.17.0` and the exact version of below it works with VS code.
+```json
+   "husky": "4.3.0",
+    "prettier": "2.8.0",
+    "lint-staged": "13.1.0"
+ ```
+ 
+ Regarding the VS code. What I have is something like below user settings.
+With this setting any project I am working in and if that project have .prettierrc.js file then the VS code auto formatting will format the settings as per the config of .prettierrc.js and that's what ideally we want so that all team members are following the same formatting rules.
+ 
+But with the husky and pre-commit settings we are also making sure that even if the developers formatting settings is not working properly then we the pre-commit hook will make sure to format all of the code before a commit is made.
+ 
+ ```json
+ {
+	"editor.fontSize": 18,
+	"terminal.integrated.fontSize": 15,
+	"editor.tabSize": 2,
+	"editor.wordWrap": "on",
+	"emmet.syntaxProfiles": {
+		"javascript": "jsx",
+		"xml": {
+			"attr_quotes": "single"
+		}
+	},
+	"extensions.autoUpdate": false,
+	"liveSassCompile.settings.formats": [
+		{
+			"format": "compressed",
+			"extensionName": ".min.css",
+			"savePath": "/dist/css"
+		}
+	],
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"terminal.integrated.rendererType": "dom",
+	"prettier.useTabs": true,
+	"liveServer.settings.donotShowInfoMsg": true,
+	"editor.formatOnType": false,
+	"markdown.preview.lineHeight": 2.5,
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[scss]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"editor.codeActionsOnSave": null,
+	"tabnine.experimentalAutoImports": true,
+	"editor.formatOnSave": false,
+	"prettier.bracketSpacing": false,
+	"bookmarks.navigateThroughAllFiles": true,
+	"bookmarks.saveBookmarksInProject": true,
+	"editor.minimap.enabled": true,
+	"terminal.integrated.shell.linux": "/bin/bash",
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"javascript.preferences.quoteStyle": "single",
+	"editor.renameOnType": true,
+	"prettier.jsxBracketSameLine": true,
+	"svg.preview.mode": "svg",
+	"gitlens.gitCommands.closeOnFocusOut": true,
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"auto-close-tag.activationOnLanguage": [
+		"xml",
+		"php",
+		"blade",
+		"ejs",
+		"jinja",
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact",
+		"plaintext",
+		"markdown",
+		"vue",
+		"liquid",
+		"erb",
+		"lang-cfml",
+		"cfml",
+		"HTML (EEx)",
+		"HTML (Eex)",
+		"plist"
+	],
+	"editor.semanticTokenColorCustomizations": null,
+	"workbench.colorCustomizations": {
+		"editorUnnecessaryCode.border": "#d30303"
+	},
+	"clockify.apiKey": "MWViOWU5MGItY2EzNi00NzUyLWJhN2YtODJiMTI4NTQ2ZmU5",
+	"workbench.startupEditor": "welcomePage",
+	"[javascriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"html.format.contentUnformatted": "",
+	"workbench.editorAssociations": {
+		"*.ico": "cweijan.officeViewer"
+	},
+	"cSpell.userWords": ["BANKNIFTY", "namaste", "quorilla"],
+	"json.maxItemsComputed": 5000000000000000,
+	"mssql.connections": [
+		{
+			"server": "{{put-server-name-here}}",
+			"database": "{{put-database-name-here}}",
+			"user": "{{put-username-here}}",
+			"password": "{{put-password-here}}"
+		}
+	],
+	"editor.formatOnPaste": false,
+	"security.workspace.trust.untrustedFiles": "open",
+	"editor.inlineSuggest.enabled": true,
+	"files.autoSave": "afterDelay",
+	"bracket-pair-colorizer-2.depreciation-notice": false,
+	"terminal.integrated.profiles.osx": {
+		"bash": {
+			"path": "bash",
+			"args": ["-l"],
+			"icon": "terminal-bash"
+		},
+		"zsh": {
+			"path": "zsh",
+			"args": ["-l"]
+		},
+		"rosetta": {
+			"path": "arch",
+			"args": ["-x86_64", "zsh", "-l"],
+			"overrideName": true
+		}
+	},
+	"terminal.integrated.defaultProfile.osx": "rosetta",
+	"git.confirmSync": false,
+	"files.autoSaveDelay": 3000,
+	"remote.SSH.remotePlatform": {
+		"shadab14meb346.bill-split-slack.draft---lingering-shape.csb": "linux"
+	},
+	"npm.keybindingsChangedWarningShown": true,
+	"github.copilot.enable": {
+		"*": true,
+		"plaintext": false,
+		"markdown": true,
+		"scminput": false,
+		"yaml": true
+	},
+	"clockify.defaultWorkspaceId": "602eb1f5a5781056167e405b",
+	"[python]": {
+		"editor.formatOnType": true,
+		"editor.defaultFormatter": "ms-python.python",
+		"editor.formatOnSave": true
+	},
+	"terminal.integrated.env.osx": {},
+	"console-ninja.featureSet": "Community",
+	"window.zoomLevel": 1,
+	"aws.resources.enabledResources": [
+		"AWS::DynamoDB::GlobalTable",
+		"AWS::DynamoDB::Table"
+	],
+	"diffEditor.ignoreTrimWhitespace": false
+}
+```
+
+Below details are from the owner of the project from which I have taken a fork.
+
 # Automate Pretitter using Git Commit Hooks with Husky
 
 Demo for tutorial [How to Add Commit Hooks to Git with Husky to Automate Code Tasks](https://www.youtube.com/watch?v=tuzys2b1J70)
