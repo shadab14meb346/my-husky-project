@@ -1,16 +1,24 @@
-So I tested it for the following.
+### Challenges I saw
 
-With node version `v14.15.0` and `v18.17.0` and the exact version of below it works with VS code.
+1. So the primary issue was with the mis match versions of husky, prettier, and lint-staged with some node verson and due to this the husky was not firing pre-commit hook. So I tested it for various versions and in the section [Solutions and working versions](https://github.com/shadab14meb346/my-husky-project/edit/main/README.md#solutions-and-working-versions) have mentioned the working version.
+2. Working on VS code the user settings needs to have prettier as a default formatter if it's not then it gives issues.
+
+### Solutions and working versions
+
+With node version `v14.15.0` and `v18.17.0` and the exact version mentioned below.
+Have a close look the version is like `"4.3.0"` and not `"^4.3.0"`. Because you never know if we give greater or equal version it might not work.
+So that's why I have it a exact version.
+
 ```json
    "husky": "4.3.0",
     "prettier": "2.8.0",
     "lint-staged": "13.1.0"
  ```
  
- Regarding the VS code. What I have is something like below user settings.
-With this setting any project I am working in and if that project have .prettierrc.js file then the VS code auto formatting will format the settings as per the config of .prettierrc.js and that's what ideally we want so that all team members are following the same formatting rules.
+Regarding the VS code. What I have is something like below user settings.
+With this setting any project I am working in and if that project have `.prettierrc.js file` then the VS code auto formatting will format the files as per the rules of `.prettierrc.js` and that's what ideally we want so that all team members are following the same formatting rules.
  
-But with the husky and pre-commit settings we are also making sure that even if the developers formatting settings is not working properly then we the pre-commit hook will make sure to format all of the code before a commit is made.
+But with the husky and pre-commit settings we are also making sure that even if the developers formatting settings is not working properly then the pre-commit hook will make sure to format all of the code before a commit is made.
  
  ```json
  {
